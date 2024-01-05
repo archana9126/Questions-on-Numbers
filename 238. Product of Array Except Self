@@ -1,0 +1,42 @@
+import java.util.Arrays;
+
+public class ProductOfArrayExceptSelf {
+    public static void main(String[] args) {
+        int[] nums = {1,2,3,4};
+        int[] result = productExceptSelf(nums);
+
+        System.out.println(Arrays.toString(result));
+    }
+
+    static int[] productExceptSelf(int[] nums) {
+        int n = nums.length;
+
+        // Create two arrays to store products to the left and right of each index
+        int[] leftProducts = new int[n];
+        int[] rightProducts = new int[n];
+
+        // Initialize the leftProducts array
+        int leftProduct = 1;
+        for (int i = 0; i < n; i++) {
+            leftProducts[i] = leftProduct;
+            leftProduct *= nums[i];
+        }
+        System.out.println(leftProduct);
+
+        // Initialize the rightProducts array
+        int rightProduct = 1;
+        for (int i = n - 1; i >= 0; i--) {
+            rightProducts[i] = rightProduct;
+            rightProduct *= nums[i];
+        }
+        System.out.println(rightProduct);
+
+        // Calculate the final result array by multiplying left and right products
+        int[] result = new int[n];
+        for (int i = 0; i < n; i++) {
+            result[i] = leftProducts[i] * rightProducts[i];
+        }
+
+        return result;
+    }
+}
