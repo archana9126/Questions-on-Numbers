@@ -1,0 +1,17 @@
+public class FindFactor {
+    public static void main(String[] args) {
+        int n = 5;
+        Factor(n);
+    }
+
+    static void Factor(int n) {
+        if (n < 0) {
+            n = -n;
+        }
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                System.out.println(i);
+            }
+        }
+    }
+}
