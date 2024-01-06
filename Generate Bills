@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class GenerteBill {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("enter the number of pizza : ");
+        int pizza = in.nextInt();
+        System.out.print("enter the number of puffs : ");
+        int puffs = in.nextInt();
+        System.out.print("enter the number of cold drinks : ");
+        int cold_drinks = in.nextInt();
+        int total_bill = (pizza * 100) + (puffs * 20) + (cold_drinks * 10);
+        System.out.println("Bills deatils:");
+        System.out.println("No. of pizza :" + pizza);
+        System.out.println("No. of puffs :" +puffs);
+        System.out.println("No. of cold drinks :" +cold_drinks);
+        System.out.println("Total Price :" + total_bill);
+        System.out.println("Enjoy the show!!");
+    }
+}
