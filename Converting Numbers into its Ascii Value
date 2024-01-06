@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class AsciiValue {
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter the number of digits: ");
+        int n = in.nextInt();
+
+        System.out.println("Enter the digits: ");
+        for (int i = 0; i < n; i++) {
+            int digit = in.nextInt();
+            char digitchar = (char) digit;
+            System.out.println(digit + "-" + digitchar);
+        }
+    }
+}
