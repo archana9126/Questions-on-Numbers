@@ -1,0 +1,33 @@
+/*
+given a String you have to check if letter in a string is vowel or not if it is vowel give
+value as "0" else "1", at the end print its binary value
+example:- input:- zoo, output: 4
+          xuuab, 17
+ */
+import java.util.*;
+public class PrintBinaryValue {
+    public static void main(String[] args) {
+       Scanner in = new Scanner(System.in);
+       String str = in.nextLine();
+        System.out.println(BinaryValue(str));
+    }
+    static boolean isVowel(char ch){
+        if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'){
+                return true;
+            }else{
+                return false;
+            }
+    }
+    static int BinaryValue(String str){
+        String ans ="";
+        for (int i = 0; i <str.length(); i++) {
+            if(isVowel(str.charAt(i))){
+            ans = ans +"0";
+            }else{
+                ans = ans+"1";
+            }
+        }
+        int n = Integer.parseInt(ans,2);
+        return n;
+    }
+}
