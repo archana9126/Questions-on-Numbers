@@ -1,0 +1,55 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class CheckSumbyeliminatingMIN_MAX {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[] arr = new int[n];
+
+        // Reading integers from the user and storing them in the array 'arr'
+        for (int i = 0; i < n; i++) {
+            arr[i] = in.nextInt();
+        }
+
+        // Calling the 'sum' method and printing the result
+        System.out.println(sum(arr, n));
+    }
+
+    // Method to calculate the sum of digits for all elements in the array
+    public static int sum(int[] arr, int n) {
+        int sum = 0;
+
+        // Loop through each element in the array
+        for (int i = 0; i < n; i++) {
+            // Call the 'digit' method to get the sum of digits for the current element
+            sum = sum + digit(arr[i]);
+        }
+        return sum;
+    }
+
+    // Method to calculate the sum of the middle digits for a given number
+    public static int digit(int n) {
+        int res = 0;
+        int temp = n;
+        ArrayList<Integer> list = new ArrayList<>();
+
+        // Extract each digit from the number and store it in the ArrayList 'list'
+        while (temp > 0) {
+            int rem = temp % 10;
+            list.add(rem);
+            temp = temp / 10;
+        }
+
+        // Sort the digits in ascending order
+        Collections.sort(list);
+
+        // Calculate the sum of the middle digits (excluding the smallest and largest)
+        for (int i = 1; i < list.size() - 1; i++) {
+            res = res + list.get(i);
+        }
+
+        return res;
+    }
+}
